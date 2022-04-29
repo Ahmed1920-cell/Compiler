@@ -235,14 +235,126 @@ namespace WebApplication1.Models
         public const int singleQ = '’';//singleQ:’
         public const int doubleQ = '“';//doubleQ:“
     }
+    class accepted
+    {
+       public int type = 0;
+       public int token = 1;
+       public string[][] accept = new string[170][2];
+        accept[States.CW][type]="Accept";
+        accept[States.CW][token]="struct";
+        accept[States.CZ][type]="Accept";
+        accept[States.CZ][token]="struct";
+        accept[States.DA][type]="Accept";
+        accept[States.DA][token]="struct";
+        accept[States.DC][type]="Accept";
+        accept[States.DC][token]="struct";
+        accept[States.DG][type]="Accept";
+        accept[States.DG][token]="struct";
+        accept[States.DN][type]="Accept";
+        accept[States.DN][token]="struct";
+        accept[States.DQ][type]="Accept";
+        accept[States.DQ][token]="struct";
+        accept[States.DW][type]="Accept";
+        accept[States.DW][token]="struct";
+        accept[States.DX][type]="Accept";
+        accept[States.DX][token]="struct";
+        accept[States.EC][type]="Accept";
+        accept[States.EC][token]="struct";
+        accept[States.EH][type]="Accept";
+        accept[States.EH][token]="struct";
+        accept[States.EI][type]="Accept";
+        accept[States.EI][token]="struct";
+        accept[States.EN][type]="Accept";
+        accept[States.EN][token]="struct";
+        accept[States.EO][type]="Accept";
+        accept[States.EO][token]="struct";
+        accept[States.ET][type]="Accept";
+        accept[States.ET][token]="struct";
+        accept[States.FA][type]="Accept";
+        accept[States.FA][token]="struct";
+        accept[States.FF][type]="Accept";
+        accept[States.FF][token]="struct";
+        accept[States.FJ][type]="Accept";
+        accept[States.FJ][token]="struct";
+        accept[States.FL][type]="Accept";
+        accept[States.FL][token]="struct";
+        accept[States.FN][type]="Accept";
+        accept[States.FN][token]="struct";
+
+
+    }
     class TransitionTable
     {
         static void Main(string[] args) {
             int[][] transitionTable = new int[170][128];
-
             transitionTable[States.A][Inputs.expl] = States.B;
             transitionTable[States.A][Inputs.bar] = States.C;
-
+            transitionTable[States.CI][Inputs.p] = States.DA;
+            transitionTable[States.CJ][Inputs.i] = States.DB;
+            transitionTable[States.CK][Inputs.e] = States.DC;
+            transitionTable[States.CK][Inputs.g] = States.DD;
+            transitionTable[States.CM][Inputs.l] = States.DE;
+            transitionTable[States.CN][Inputs.a] = States.DF;
+            transitionTable[States.CO][Inputs.p] = States.DG;
+            transitionTable[States.CP][Inputs.i] = States.DH;
+            transitionTable[States.CQ][Inputs.a] = States.DI;
+            transitionTable[States.CR][Inputs.n] = States.DJ;
+            transitionTable[States.CS][Inputs.u] = States.DK;
+            transitionTable[States.CT][Inputs.m] = States.DL;
+            transitionTable[States.CU][Inputs.g] = States.DM;
+            transitionTable[States.CV][Inputs.k] = States.DN;
+            transitionTable[States.CX][Inputs.i] = States.DO;
+            transitionTable[States.CY][Inputs.v] = States.DP;
+            transitionTable[States.DA][Inputs.f] = States.DQ;
+            transitionTable[States.DB][Inputs.c] = States.DR;
+            transitionTable[States.DD][Inputs.r] = States.DS;
+            transitionTable[States.DE][Inputs.y] = States.DT;
+            transitionTable[States.DF][Inputs.t] = States.DU;
+            transitionTable[States.DH][Inputs.e] = States.DV;
+            transitionTable[States.DI][Inputs.p] = States.DW;
+            transitionTable[States.DJ][Inputs.g] = States.DX;
+            transitionTable[States.DK][Inputs.a] = States.DY;
+            transitionTable[States.DL][Inputs.i] = States.DZ;
+            transitionTable[States.DM][Inputs.o] = States.EA;
+            transitionTable[States.DO][Inputs.n] = States.EB;
+            transitionTable[States.DP][Inputs.e] = States.EC;
+            transitionTable[States.DR][Inputs.a] = States.ED;
+            transitionTable[States.DS][Inputs.a] = States.EE;
+            transitionTable[States.DT][Inputs.w] = States.EF;
+            transitionTable[States.DU][Inputs.e] = States.EG;
+            transitionTable[States.DV][Inputs.s] = States.EH;
+            transitionTable[States.DW][Inputs.f] = States.EI;
+            transitionTable[States.DY][Inputs.t] = States.EJ;
+            transitionTable[States.DZ][Inputs.n] = States.EK;
+            transitionTable[States.EA][Inputs.r] = States.EL;
+            transitionTable[States.EB][Inputs.u] = States.EM;
+            transitionTable[States.ED][Inputs.l] = States.EN;
+            transitionTable[States.EE][Inputs.m] = States.EO;
+            transitionTable[States.EF][Inputs.i] = States.EP;
+            transitionTable[States.EG][Inputs.w] = States.EQ;
+            transitionTable[States.EJ][Inputs.i] = States.ER;
+            transitionTable[States.EK][Inputs.a] = States.ES;
+            transitionTable[States.EL][Inputs.y] = States.ET;
+            transitionTable[States.EM][Inputs.e] = States.EU;
+            transitionTable[States.EP][Inputs.t] = States.EV;
+            transitionTable[States.EQ][Inputs.h] = States.EW;
+            transitionTable[States.ER][Inputs.o] = States.EX;
+            transitionTable[States.ES][Inputs.t] = States.EY;
+            transitionTable[States.EU][Inputs.w] = States.EZ;
+            transitionTable[States.EV][Inputs.h] = States.FA;
+            transitionTable[States.EW][Inputs.e] = States.FB;
+            transitionTable[States.EX][Inputs.n] = States.FC;
+            transitionTable[States.EY][Inputs.e] = States.FD;
+            transitionTable[States.EZ][Inputs.h] = States.FE;
+            transitionTable[States.FB][Inputs.n] = States.FF;
+            transitionTable[States.FC][Inputs.o] = States.FG;
+            transitionTable[States.FD][Inputs.t] = States.FH;
+            transitionTable[States.FE][Inputs.e] = States.FI;
+            transitionTable[States.FG][Inputs.f] = States.FJ;
+            transitionTable[States.FH][Inputs.h] = States.FK;
+            transitionTable[States.FI][Inputs.n] = States.FL;
+            transitionTable[States.FK][Inputs.i] = States.FM;
+            transitionTable[States.FM][Inputs.s] = States.FN;
         }
     }
 }
