@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post">
+    <textarea rows="4" cols="50" name="input_code" placeholder="Write your code here">@ViewBag.code</textarea>
+    <br>
+    <input type="submit" value="Scan">
+</form>
+
+@if(ViewBag.vb!=null){
+    foreach(string T in ViewBag.vb)
+    {
+            <text>@T</text>
+            <br/>
+    }
+}
