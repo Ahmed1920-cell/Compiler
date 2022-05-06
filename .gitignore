@@ -58,3 +58,5 @@ Compiler_Project/obj/Debug/net6.0/staticwebassets.development.json
 Compiler_Project/obj/project.assets.json
 Compiler_Project/obj/project.nuget.cache
 Compiler_Project/obj/staticwebassets.pack.sentinel
+Compiler_Project/.vs/Compiler_Project/DesignTimeBuild/.dtbcache.v2
+Compiler_Project/.vs/Compiler_Project/v17/.futdcache.v1
