@@ -554,8 +554,8 @@ namespace CompilerProject.Models
 
         private int[,] MakeTransitionTable()
         {
-            int[,] transitionTable = new int[170, 128];
-            for (int i = 0; i < 170; i++)
+            int[,] transitionTable = new int[172, 128];
+            for (int i = 0; i < 172; i++)
             {
                 for (int j = 0; j < 128; j++)
                 {
