@@ -428,43 +428,21 @@ namespace CompilerProject.Models
             return tokensWithLineNumber;
         }
 
-        private bool is_identifier(string lexeim)
+        private static bool is_identifier(string lexeim)
         {
             char firstChar = lexeim[0];
             for (int i = 0; i < lexeim.Length; i++)
             {
                 if (i == 0)
                 {
-                    if (firstChar <= 'Z')
-                    {
-                        if (!(firstChar >= 'A'))
-                        {
-                            return false;
-                        }
-                    }
-                    else if (firstChar == '_')
-                    {
-                        return false;
-                    }
-                    else if (!(firstChar >= 'a' && firstChar <= 'z'))
+                    if (!(firstChar <= 'A' && firstChar >= 'Z' || firstChar != '_' || firstChar <= 'a' && firstChar >= 'z'))
                     {
                         return false;
                     }
                 }
                 else
                 {
-                    if (lexeim[i] <= 'Z')
-                    {
-                        if (!(lexeim[i] >= 'A'))
-                        {
-                            return false;
-                        }
-                    }
-                    else if (lexeim[i] == '_')
-                    {
-                        return false;
-                    }
-                    else if (!(lexeim[i] >= 'a' && lexeim[i] <= 'z'))
+                    if (!(lexeim[i] <= 'A' && lexeim[i] >= 'Z' || lexeim[i] != '_' || lexeim[i] <= 'a' && lexeim[i] >= 'z' || lexeim[i] >= '0' && lexeim[i] <= '9'))
                     {
                         return false;
                     }
