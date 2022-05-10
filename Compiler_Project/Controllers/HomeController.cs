@@ -37,7 +37,7 @@ namespace WebApplication1.Controllers
                     int lineNumber = tokenWithLineNumber.lineNumber;
                     string tokenName = tokenWithLineNumber.token.tokenName;
                     string tokenValue = tokenWithLineNumber.token.tokenValue;
-                    tokensWithLineNumberToView.Add("Line : " + lineNumber + " Token Text: " + tokenName + " Token Type: " + tokenValue);
+                    tokensWithLineNumberToView.Add("Line : " + lineNumber + "\tToken Text: " + tokenName + "\tToken Type: " + tokenValue);
                 }
                 tokensWithLineNumberToView.Add("Total NO of errors: " + scanner.total_number_of_errors);
 
