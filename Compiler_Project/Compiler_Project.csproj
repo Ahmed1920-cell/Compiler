@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\lib\jquery\dist\jquery-linenumbers.js" />
+    <None Include="wwwroot\lib\jquery\dist\StyleSheet.css" />
+  </ItemGroup>
+
 </Project>
