@@ -14,15 +14,15 @@
                 <textarea id="line_numbers" rows="4" cols="50" name="input_code" placeholder="Type your Code here ..." required>@ViewBag.code</textarea>
                 <div class="botton">
                     <input type="submit" class="btn" value="Scan">
-                    <!--<input type="submit" class="btn" value="Parse">-->
-                    <!--<a href="#" class="btn">Browse</a>-->
+                    <input type="submit" class="btn" value="Parse">
+                    <a href="#" class="btn">Browse</a>
                 </div>
             </div>
         </form>
         <br>
         <div class="wrapper">
             <h2>Output</h2>
-            <div style='border:5px solid black;'>
+            <div class='output'>
                 @if (ViewBag.vb != null)
                     {
                     foreach(string T in ViewBag.vb)
@@ -34,24 +34,8 @@
              </div>
             <br>
         </div>
-        <!--
-        <script>
-          const textarea = document.querySelector("textarea");
-          textarea.addEventListener("keyup", e => {
-              textarea.style.height = "auto";
-              let scHeight = e.target.scrollHeight;
-              textarea.style.height = `${scHeight}px`;
-          });
-        </script>
-        -->
     </body>
-    <!--
-<form method="post">
-    <!--
-    <textarea rows="4" cols="50" name="input_code" placeholder="Write your code here">@ViewBag.code</textarea>
-    <br>
-    <input type="submit" value="Scan">
-    -->
+
     <script>
     (function ($) {
     $.fn.linenumbers = function (in_opts) {
