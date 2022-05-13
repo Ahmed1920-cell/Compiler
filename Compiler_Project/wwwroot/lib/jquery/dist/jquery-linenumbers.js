@@ -1,42 +1,4 @@
-﻿
-
-    <head>
-        <meta charset="utf-8">
-        <title>Compiler Project</title>
-        <link rel="stylesheet" href="~/lib/jquery/dist/StyleSheet.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <meta name=" viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <form method="post">
-            <div class="wrapper">
-                <h2>Code</h2>
-                <textarea id="line_numbers" rows="4" cols="50" name="input_code" placeholder="Type your Code here ..." required>@ViewBag.code</textarea>
-                <div class="botton">
-                    <input type="submit" class="btn" value="Scan">
-                    <input type="submit" class="btn" value="Parse">
-                    <a href="#" class="btn">Browse</a>
-                </div>
-            </div>
-        </form>
-        <br>
-        <div class="wrapper">
-            <h2>Output</h2>
-            <div class='output'>
-                @if (ViewBag.vb != null)
-                    {
-                    foreach(string T in ViewBag.vb)
-                        {
-                            <text><pre style='overflow:unset;'>@T</pre></text>
-                        }
-                    }
-             </div>
-            <br>
-        </div>
-    </body>
-
-    <script>
-    (function ($) {
+﻿(function ($) {
     $.fn.linenumbers = function (in_opts) {
         // Settings and Defaults
         var opt = $.extend({
@@ -100,7 +62,3 @@
     };
 })(jQuery);
 $('textarea').linenumbers();
-    </script>
-            <script>$('document').ready(function(){
-            $('#line_numbers').linenumbers({col_width:'75px'});
-        })</script>

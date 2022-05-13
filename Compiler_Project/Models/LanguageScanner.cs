@@ -435,17 +435,13 @@ namespace CompilerProject.Models
             {
                 if (i == 0)
                 {
-                    if (!(firstChar <= 'A' && firstChar >= 'Z' || firstChar != '_' || firstChar <= 'a' && firstChar >= 'z'))
-                    {
+                    if (firstChar < 'A'  || firstChar < 'a' && firstChar >'Z' && firstChar!='_'|| firstChar > 'z')
                         return false;
-                    }
                 }
                 else
                 {
-                    if (!(lexeim[i] <= 'A' && lexeim[i] >= 'Z' || lexeim[i] != '_' || lexeim[i] <= 'a' && lexeim[i] >= 'z' || lexeim[i] >= '0' && lexeim[i] <= '9'))
-                    {
+                    if( lexeim[i]<'A' && lexeim[i]>'9' || lexeim[i] < 'a' && lexeim[i] > 'Z' && lexeim[i]!='_'|| lexeim[i]<'0' || lexeim[i]>'z')
                         return false;
-                    }
                 }
             }
 
