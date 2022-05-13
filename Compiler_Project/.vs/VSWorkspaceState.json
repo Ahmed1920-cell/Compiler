@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Views"
+    "\\Views",
+    "\\Views\\Home",
+    "\\wwwroot",
+    "\\wwwroot\\lib",
+    "\\wwwroot\\lib\\jquery",
+    "\\wwwroot\\lib\\jquery\\dist"
   ],
   "SelectedNode": "\\Compiler_Project.sln",
   "PreviewInSolutionExplorer": false
