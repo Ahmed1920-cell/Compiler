@@ -8,7 +8,7 @@
 }
 
 body {
-    display: flex;
+    display: grid;
     vertical-align: baseline;
     align-items: center;
     justify-content: center;
@@ -44,6 +44,12 @@ body {
         color: #4671EA;
         font-size: 28px;
         text-align: center;
+    }
+
+    .wrapper span {
+        color: #4671EA;
+        font-size: 22px;
+        vertical-align: -webkit-baseline-middle;
     }
 
     .wrapper textarea {
@@ -92,15 +98,13 @@ textarea:is(:focus, :valid) {
     transition-property: box-shadow, transform;
 }
 
-    .btn:hover, .btn:focus, .btn:active {
-        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
+.btn:hover, .btn:focus, .btn:active {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 input[type="file"] {
-    position: static;
-    z-index: -1;
-    top: 74%;
-    left: 31%;
+    position: absolute;
     visibility: hidden;
 }
