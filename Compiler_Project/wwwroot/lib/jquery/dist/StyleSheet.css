@@ -97,9 +97,10 @@ textarea:is(:focus, :valid) {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
- input[type="file"] {
-        position: absolute;
-        z-index: -1;
-        top: 74%;
-        left: 31%;
-      }
+input[type="file"] {
+    position: static;
+    z-index: -1;
+    top: 74%;
+    left: 31%;
+    visibility: hidden;
+}
