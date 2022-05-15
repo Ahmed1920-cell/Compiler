@@ -12,6 +12,10 @@
         <form method="post">
             <div class="wrapper">
                 <h2>Code</h2>
+                <div class="editorToolBar">
+                <button onclick="commintText()">comment</button>
+                <button onclick="uncommintText()">uncomment</button>
+                </div>
                 <textarea id="line_numbers" rows="4" cols="50" name="input_code" placeholder="Type your Code here ..." required>@ViewBag.code</textarea>
                 <div class="botton">
                     <input type="submit" class="btn" value="Scan">
@@ -39,7 +43,7 @@
             <br>
         </div>
     </body>
-
+    <!-- linenumber script-->
     <script>
     (function ($) {
     $.fn.linenumbers = function (in_opts) {
@@ -106,6 +110,7 @@
     })(jQuery);
     $('textarea').linenumbers();
     </script>
+    <!-- browse file script-->
     <script>
         let upload = document.getElementById('upload');
         let outputBX = document.getElementById('outputBX');
@@ -116,4 +121,22 @@
                 outputBX.innerHTML = fr.result;
             };
         });
+    </script>
+    <!-- comment script-->
+    <script>
+    function commintText() {
+        if (document.getSelection){
+            var text = "/*"+document.getSelection().toString() + "*/";
+            document.getElementById('line_numbers').innerHTML = text;
+            alert(text);
+        }
+    }
+    </script>
+     <script>
+    function uncommintText() {
+        if (document.getSelection){
+            var text = document.getSelection().toString();
+            alert(text);
+        }
+    }
     </script>
