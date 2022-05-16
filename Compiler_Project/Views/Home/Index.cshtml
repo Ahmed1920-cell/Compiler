@@ -139,17 +139,12 @@
         if (document.getSelection){
             let code = document.getElementById('line_numbers').value;
             let comment = document.getSelection().toString();
-            code = code.replace(document.getSelection().toString(), comment);
+            //let re1 =/<*/
+            //let uncomment = comment.replace(/('<*') ([^'<*']) ([^'*>']+) ('*>')/g, $2$3);
+            let uncomment = comment.split("<*").join('');
+            uncomment = uncomment.split("*>").join('');
+            code = code.replace(comment, uncomment);
             document.getElementById('line_numbers').value = code;
-        }
-
-        if (document.getSelection.toString){
-            var text = document.getSelection().toString();
-            if (text.includes('/*' || '*/')) {
-                text.replace(['/*' || '*/'], '');
-                document.getElementById('line_numbers').innerHTML = text;
-            }
-            alert(text);
         }
     }
     </script>
