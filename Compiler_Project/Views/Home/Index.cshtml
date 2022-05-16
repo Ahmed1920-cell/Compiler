@@ -13,8 +13,8 @@
             <div class="wrapper">
                 <h2>Code</h2>
                 <div class="editorToolBar">
-                <button onclick="commintText()">comment</button>
-                <button onclick="uncommintText()">uncomment</button>
+                    <button class="comment" onclick="commintText()">comment</button>
+                    <button class="comment" onclick="uncommintText()">uncomment</button>
                 </div>
                 <textarea id="line_numbers" rows="4" cols="50" name="input_code" placeholder="Type your Code here ..." required>@ViewBag.code</textarea>
                 <div class="botton">
@@ -136,6 +136,10 @@
     function uncommintText() {
         if (document.getSelection){
             var text = document.getSelection().toString();
+            if (text.includes('/*' || '*/')) {
+                text.replace(['/*' || '*/'], '');
+                document.getElementById('line_numbers').innerHTML = text;
+            }
             alert(text);
         }
     }
