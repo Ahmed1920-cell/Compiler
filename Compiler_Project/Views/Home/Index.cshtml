@@ -13,8 +13,8 @@
             <div class="wrapper">
                 <h2>Code</h2>
                 <div class="editorToolBar">
-                    <button class="comment" onclick="commintText()">comment</button>
-                    <button class="comment" onclick="uncommintText()">uncomment</button>
+                    <button class="comment" onclick="commentText()">comment</button>
+                    <button class="comment" onclick="uncommentText()">uncomment</button>
                 </div>
                 <textarea id="line_numbers" rows="4" cols="50" name="input_code" placeholder="Type your Code here ..." required>@ViewBag.code</textarea>
                 <div class="botton">
@@ -124,17 +124,26 @@
     </script>
     <!-- comment script-->
     <script>
-    function commintText() {
+    function commentText() {
         if (document.getSelection){
-            var text = "/*"+document.getSelection().toString() + "*/";
-            document.getElementById('line_numbers').innerHTML = text;
-            alert(text);
+            let code = document.getElementById('line_numbers').value;
+            let comment = "<*" + document.getSelection().toString() + "*>";
+            code = code.replace(document.getSelection().toString(), comment);
+            document.getElementById('line_numbers').value = code;
         }
     }
     </script>
+     <!-- uncomment script-->
      <script>
-    function uncommintText() {
+    function uncommentText() {
         if (document.getSelection){
+            let code = document.getElementById('line_numbers').value;
+            let comment = document.getSelection().toString();
+            code = code.replace(document.getSelection().toString(), comment);
+            document.getElementById('line_numbers').value = code;
+        }
+
+        if (document.getSelection.toString){
             var text = document.getSelection().toString();
             if (text.includes('/*' || '*/')) {
                 text.replace(['/*' || '*/'], '');
