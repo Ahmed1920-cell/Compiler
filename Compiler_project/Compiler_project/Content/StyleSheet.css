@@ -86,6 +86,7 @@ body {
         border-color: #bfbfbf;
         max-height: 400px;
         white-space: nowrap;
+
     }
 
 textarea:is(:focus, :valid) {
