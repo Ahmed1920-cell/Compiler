@@ -77,7 +77,7 @@ namespace Compiler_project.Controllers
 
                     if ((Boolean)Session["isScanned"] == true)
                     {
-                        parseToView.Add("Parse Working");
+                        parseToView.Add("Parser Working");
                     }
                     else
                     {
