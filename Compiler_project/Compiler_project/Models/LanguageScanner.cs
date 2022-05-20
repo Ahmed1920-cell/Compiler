@@ -182,7 +182,6 @@ namespace Compiler_project.Models
         public const int FN = 169;
         public const int FO = 170;
         public const int FP = 171;
-
     }
     internal class Inputs
     {
@@ -465,51 +464,70 @@ namespace Compiler_project.Models
             accept_states[States.F] = "Access Operator";
             accept_states[States.G] = "Arithmetic Operation";
             accept_states[States.H] = "Constant";
-            accept_states[States.I] = "relational operators";
-            accept_states[States.J] = "Assignment operator";
-            accept_states[States.K] = "relational operators";
-            accept_states[States.L] = "Arithmetic Operation";
-            accept_states[States.W] = "Braces";
-            accept_states[States.X] = "Braces";
-            accept_states[States.Y] = "Arithmetic Operation";
-            accept_states[States.AB] = "Braces";
-            accept_states[States.AC] = "Braces";
-            accept_states[States.AD] = "Logic operators";
-            accept_states[States.AE] = "Quotation Mark";
-            accept_states[States.AF] = "Quotation Mark";
-            accept_states[States.AI] = "relational operators";
-            accept_states[States.AJ] = "Logic operators";
-            accept_states[States.AK] = "Logic operators";
-            accept_states[States.AL] = "single comment";
-            accept_states[States.AM] = "relational operators";
-            accept_states[States.AN] = "multi comment";
-            accept_states[States.AO] = "relational operators";
-            accept_states[States.AP] = "relational operators";
-            accept_states[States.AQ] = "multi comment";
-            accept_states[States.AY] = "Condition";
-            accept_states[States.BQ] = "End Statement";
-            accept_states[States.CF] = "Character";
-            accept_states[States.CI] = "Condition";
-            accept_states[States.CJ] = "Integer";
-            accept_states[States.CL] = "Void";
-            accept_states[States.CP] = "Struct";
-            accept_states[States.CW] = "Switch";
-            accept_states[States.CZ] = "Float";
-            accept_states[States.DF] = "SInteger";
-            accept_states[States.DG] = "Inclusion";
-            accept_states[States.DL] = "Inheritance";
-            accept_states[States.DQ] = "String";
-            accept_states[States.DR] = "SFloat";
-            accept_states[States.DW] = "Boolean";
-            accept_states[States.DX] = "Stat Statement";
-            accept_states[States.EC] = "Class";
-            accept_states[States.EJ] = "Return";
-            accept_states[States.EO] = "Loop";
-            accept_states[States.ES] = "Switch";
-            accept_states[States.EU] = "Loop";
-            accept_states[States.EW] = "Break";
+            accept_states[States.I] = "Constant";
+            accept_states[States.J] = "Constant";
+            accept_states[States.K] = "Constant";
+            accept_states[States.L] = "Constant";
+            accept_states[States.M] = "Constant";
+            accept_states[States.N] = "Constant";
+            accept_states[States.O] = "Constant";
+            accept_states[States.P] = "Constant";
+            accept_states[States.Q] = "Constant";
+            accept_states[States.R] = "relational operators";
+            accept_states[States.S] = "Assignment operator";
+            accept_states[States.T] = "relational operators";
+            accept_states[States.U] = "Arithmetic Operation";
+            accept_states[States.AF] = "Braces";
             accept_states[States.AG] = "Braces";
-            accept_states[States.AH] = "Braces";
+            accept_states[States.AH] = "Arithmetic Operation";
+            accept_states[States.AK] = "Braces";
+            accept_states[States.AL] = "Braces";
+            accept_states[States.AM] = "Logic operators";
+            accept_states[States.AN] = "Quotation Mark";
+            accept_states[States.AO] = "Quotation Mark";
+            accept_states[States.AP] = "relational operators";
+            accept_states[States.AQ] = "Logic operators";
+            accept_states[States.AR] = "Logic operators";
+            accept_states[States.AS] = "single comment";
+            accept_states[States.AT] = "Constant";
+            accept_states[States.AU] = "Constant";
+            accept_states[States.AV] = "Constant";
+            accept_states[States.AW] = "Constant";
+            accept_states[States.AX] = "Constant";
+            accept_states[States.AY] = "Constant";
+            accept_states[States.AZ] = "Constant";
+            accept_states[States.BA] = "Constant";
+            accept_states[States.BB] = "Constant";
+            accept_states[States.BC] = "Constant";
+            accept_states[States.BD] = "relational operators";
+            accept_states[States.BE] = "multi comment";
+            accept_states[States.BF] = "relational operators";
+            accept_states[States.BG] = "relational operators";
+            accept_states[States.BH] = "multi comment";
+            accept_states[States.BP] = "Condition";
+            accept_states[States.CH] = "End Statement";
+            accept_states[States.CW] = "Character";
+            accept_states[States.CZ] = "Condition";
+            accept_states[States.DA] = "Integer";
+            accept_states[States.DC] = "Void";
+            accept_states[States.DG] = "Struct";
+            accept_states[States.DN] = "Switch";
+            accept_states[States.DQ] = "Float";
+            accept_states[States.DW] = "SInteger";
+            accept_states[States.DX] = "Inclusion";
+            accept_states[States.EC] = "Inheritance";
+            accept_states[States.EH] = "String";
+            accept_states[States.EI] = "SFloat";
+            accept_states[States.EN] = "Boolean";
+            accept_states[States.EO] = "Stat Statement";
+            accept_states[States.ET] = "Class";
+            accept_states[States.FA] = "Return";
+            accept_states[States.FF] = "Loop";
+            accept_states[States.FJ] = "Switch";
+            accept_states[States.FL] = "Loop";
+            accept_states[States.FN] = "Break";
+            accept_states[States.FO] = "Braces";
+            accept_states[States.FP] = "Braces";
             return accept_states;
         }
 
@@ -529,209 +547,430 @@ namespace Compiler_project.Models
             transitionTable[States.A, Inputs.dash] = States.E;
             transitionTable[States.A, Inputs.dot] = States.F;
             transitionTable[States.A, Inputs.div] = States.G;
-            for(int i = Inputs.zero; i <= Inputs.nine; i++)
-            {
-                transitionTable[States.A,i] = States.H;
-            }
-            transitionTable[States.A, Inputs.less] = States.I;
-            transitionTable[States.A, Inputs.eq] = States.J;
-            transitionTable[States.A, Inputs.greater] = States.K;
-            transitionTable[States.A, Inputs.mul] = States.L;
-            transitionTable[States.A, Inputs.C] = States.M;
-            transitionTable[States.A, Inputs.D] = States.N;
-            transitionTable[States.A, Inputs.E] = States.O;
-            transitionTable[States.A, Inputs.I] = States.P;
-            transitionTable[States.A, Inputs.L] = States.Q;
-            transitionTable[States.A, Inputs.N] = States.R;
-            transitionTable[States.A, Inputs.P] = States.S;
-            transitionTable[States.A, Inputs.R] = States.T;
-            transitionTable[States.A, Inputs.S] = States.U;
-            transitionTable[States.A, Inputs.U] = States.V;
-            transitionTable[States.A, Inputs.Lbrac] = States.W;
-            transitionTable[States.A, Inputs.Rbrac] = States.X;
-            transitionTable[States.A, Inputs.plus] = States.Y;
-            transitionTable[States.A, Inputs.s] = States.Z;
-            transitionTable[States.A, Inputs.t] = States.AA;
-            transitionTable[States.A, Inputs.LCbrace] = States.AB;
-            transitionTable[States.A, Inputs.RCbrace] = States.AC;
-            transitionTable[States.A, Inputs.telda] = States.AD;
-            transitionTable[States.A, Inputs.singleQ] = States.AE;
-            transitionTable[States.A, Inputs.doubleQ] = States.AF;
-            transitionTable[States.A, Inputs.Lpren] = States.AG;
-            transitionTable[States.A, Inputs.Rpren] = States.AH;
+            transitionTable[States.A, Inputs.zero] = States.H;
+            transitionTable[States.A, Inputs.one] = States.I;
+            transitionTable[States.A, Inputs.two] = States.J;
+            transitionTable[States.A, Inputs.three] = States.K;
+            transitionTable[States.A, Inputs.four] = States.L;
+            transitionTable[States.A, Inputs.five] = States.M;
+            transitionTable[States.A, Inputs.six] = States.N;
+            transitionTable[States.A, Inputs.seven] = States.O;
+            transitionTable[States.A, Inputs.eight] = States.P;
+            transitionTable[States.A, Inputs.nine] = States.Q;
+            transitionTable[States.A, Inputs.less] = States.R;
+            transitionTable[States.A, Inputs.eq] = States.S;
+            transitionTable[States.A, Inputs.greater] = States.T;
+            transitionTable[States.A, Inputs.mul] = States.U;
+            transitionTable[States.A, Inputs.C] = States.V;
+            transitionTable[States.A, Inputs.D] = States.W;
+            transitionTable[States.A, Inputs.E] = States.X;
+            transitionTable[States.A, Inputs.I] = States.Y;
+            transitionTable[States.A, Inputs.L] = States.Z;
+            transitionTable[States.A, Inputs.N] = States.AA;
+            transitionTable[States.A, Inputs.P] = States.AB;
+            transitionTable[States.A, Inputs.R] = States.AC;
+            transitionTable[States.A, Inputs.S] = States.AD;
+            transitionTable[States.A, Inputs.U] = States.AE;
+            transitionTable[States.A, Inputs.Lbrac] = States.AF;
+            transitionTable[States.A, Inputs.Rbrac] = States.AG;
+            transitionTable[States.A, Inputs.plus] = States.AH;
+            transitionTable[States.A, Inputs.s] = States.AI;
+            transitionTable[States.A, Inputs.t] = States.AJ;
+            transitionTable[States.A, Inputs.LCbrace] = States.AK;
+            transitionTable[States.A, Inputs.RCbrace] = States.AL;
+            transitionTable[States.A, Inputs.telda] = States.AM;
+            transitionTable[States.A, Inputs.singleQ] = States.AN;
+            transitionTable[States.A, Inputs.doubleQ] = States.AO;
+            transitionTable[States.A, Inputs.Lpren] = States.FO;
+            transitionTable[States.A, Inputs.Rpren] = States.FP;
 
 
-            transitionTable[States.B, Inputs.eq] = States.AI;
+            transitionTable[States.B, Inputs.eq] = States.AP;
 
-            transitionTable[States.C, Inputs.bar] = States.AJ;
+            transitionTable[States.C, Inputs.bar] = States.AQ;
 
-            transitionTable[States.D, Inputs.ampr] = States.AK;
+            transitionTable[States.D, Inputs.ampr] = States.AR;
 
-            transitionTable[States.E, Inputs.dash] = States.AL;
+            transitionTable[States.E, Inputs.dash] = States.AS;
 
-            for (int i = Inputs.zero; i <= Inputs.nine; i++)
-            {
-                transitionTable[States.H, i] = States.H;
-            }
+            transitionTable[States.H, Inputs.zero] = States.AT;
+            transitionTable[States.I, Inputs.zero] = States.AT;
+            transitionTable[States.J, Inputs.zero] = States.AT;
+            transitionTable[States.K, Inputs.zero] = States.AT;
+            transitionTable[States.L, Inputs.zero] = States.AT;
+            transitionTable[States.M, Inputs.zero] = States.AT;
+            transitionTable[States.N, Inputs.zero] = States.AT;
+            transitionTable[States.O, Inputs.zero] = States.AT;
+            transitionTable[States.P, Inputs.zero] = States.AT;
+            transitionTable[States.Q, Inputs.zero] = States.AT;
 
-            transitionTable[States.I, Inputs.eq] = States.AM;
-            transitionTable[States.I, Inputs.mul] = States.AN;
+            transitionTable[States.H, Inputs.one] = States.AU;
+            transitionTable[States.I, Inputs.one] = States.AU;
+            transitionTable[States.J, Inputs.one] = States.AU;
+            transitionTable[States.K, Inputs.one] = States.AU;
+            transitionTable[States.L, Inputs.one] = States.AU;
+            transitionTable[States.M, Inputs.one] = States.AU;
+            transitionTable[States.N, Inputs.one] = States.AU;
+            transitionTable[States.O, Inputs.one] = States.AU;
+            transitionTable[States.P, Inputs.one] = States.AU;
+            transitionTable[States.Q, Inputs.one] = States.AU;
 
-            transitionTable[States.J, Inputs.eq] = States.AO;
+            transitionTable[States.H, Inputs.two] = States.AV;
+            transitionTable[States.I, Inputs.two] = States.AV;
+            transitionTable[States.J, Inputs.two] = States.AV;
+            transitionTable[States.K, Inputs.two] = States.AV;
+            transitionTable[States.L, Inputs.two] = States.AV;
+            transitionTable[States.M, Inputs.two] = States.AV;
+            transitionTable[States.N, Inputs.two] = States.AV;
+            transitionTable[States.O, Inputs.two] = States.AV;
+            transitionTable[States.P, Inputs.two] = States.AV;
+            transitionTable[States.Q, Inputs.two] = States.AV;
 
-            transitionTable[States.K, Inputs.eq] = States.AP;
+            transitionTable[States.H, Inputs.three] = States.AW;
+            transitionTable[States.I, Inputs.three] = States.AW;
+            transitionTable[States.J, Inputs.three] = States.AW;
+            transitionTable[States.K, Inputs.three] = States.AW;
+            transitionTable[States.L, Inputs.three] = States.AW;
+            transitionTable[States.M, Inputs.three] = States.AW;
+            transitionTable[States.N, Inputs.three] = States.AW;
+            transitionTable[States.O, Inputs.three] = States.AW;
+            transitionTable[States.P, Inputs.three] = States.AW;
+            transitionTable[States.Q, Inputs.three] = States.AW;
 
-            transitionTable[States.L, Inputs.greater] = States.AQ;
+            transitionTable[States.H, Inputs.four] = States.AX;
+            transitionTable[States.I, Inputs.four] = States.AX;
+            transitionTable[States.J, Inputs.four] = States.AX;
+            transitionTable[States.K, Inputs.four] = States.AX;
+            transitionTable[States.L, Inputs.four] = States.AX;
+            transitionTable[States.M, Inputs.four] = States.AX;
+            transitionTable[States.N, Inputs.four] = States.AX;
+            transitionTable[States.O, Inputs.four] = States.AX;
+            transitionTable[States.P, Inputs.four] = States.AX;
+            transitionTable[States.Q, Inputs.four] = States.AX;
 
-            transitionTable[States.M, Inputs.a] = States.AR;
-            transitionTable[States.M, Inputs.h] = States.AS;
-            transitionTable[States.M, Inputs.l] = States.AT;
-            transitionTable[States.M, Inputs.o] = States.AU;
+            transitionTable[States.H, Inputs.five] = States.AY;
+            transitionTable[States.I, Inputs.five] = States.AY;
+            transitionTable[States.J, Inputs.five] = States.AY;
+            transitionTable[States.K, Inputs.five] = States.AY;
+            transitionTable[States.L, Inputs.five] = States.AY;
+            transitionTable[States.M, Inputs.five] = States.AY;
+            transitionTable[States.N, Inputs.five] = States.AY;
+            transitionTable[States.O, Inputs.five] = States.AY;
+            transitionTable[States.P, Inputs.five] = States.AY;
+            transitionTable[States.Q, Inputs.five] = States.AY;
 
-            transitionTable[States.N, Inputs.e] = States.AV;
+            transitionTable[States.H, Inputs.six] = States.AZ;
+            transitionTable[States.I, Inputs.six] = States.AZ;
+            transitionTable[States.J, Inputs.six] = States.AZ;
+            transitionTable[States.K, Inputs.six] = States.AZ;
+            transitionTable[States.L, Inputs.six] = States.AZ;
+            transitionTable[States.M, Inputs.six] = States.AZ;
+            transitionTable[States.N, Inputs.six] = States.AZ;
+            transitionTable[States.O, Inputs.six] = States.AZ;
+            transitionTable[States.P, Inputs.six] = States.AZ;
+            transitionTable[States.Q, Inputs.six] = States.AZ;
 
-            transitionTable[States.O, Inputs.l] = States.AW;
-            transitionTable[States.O, Inputs.n] = States.AX;
+            transitionTable[States.H, Inputs.seven] = States.BA;
+            transitionTable[States.I, Inputs.seven] = States.BA;
+            transitionTable[States.J, Inputs.seven] = States.BA;
+            transitionTable[States.K, Inputs.seven] = States.BA;
+            transitionTable[States.L, Inputs.seven] = States.BA;
+            transitionTable[States.M, Inputs.seven] = States.BA;
+            transitionTable[States.N, Inputs.seven] = States.BA;
+            transitionTable[States.O, Inputs.seven] = States.BA;
+            transitionTable[States.P, Inputs.seven] = States.BA;
+            transitionTable[States.Q, Inputs.seven] = States.BA;
 
-            transitionTable[States.P, Inputs.f] = States.AY;
-            transitionTable[States.P, Inputs.l] = States.AZ;
+            transitionTable[States.H, Inputs.eight] = States.BB;
+            transitionTable[States.I, Inputs.eight] = States.BB;
+            transitionTable[States.J, Inputs.eight] = States.BB;
+            transitionTable[States.K, Inputs.eight] = States.BB;
+            transitionTable[States.L, Inputs.eight] = States.BB;
+            transitionTable[States.M, Inputs.eight] = States.BB;
+            transitionTable[States.N, Inputs.eight] = States.BB;
+            transitionTable[States.O, Inputs.eight] = States.BB;
+            transitionTable[States.P, Inputs.eight] = States.BB;
+            transitionTable[States.Q, Inputs.eight] = States.BB;
 
-            transitionTable[States.Q, Inputs.o] = States.BA;
+            transitionTable[States.H, Inputs.nine] = States.BC;
+            transitionTable[States.I, Inputs.nine] = States.BC;
+            transitionTable[States.J, Inputs.nine] = States.BC;
+            transitionTable[States.K, Inputs.nine] = States.BC;
+            transitionTable[States.L, Inputs.nine] = States.BC;
+            transitionTable[States.M, Inputs.nine] = States.BC;
+            transitionTable[States.N, Inputs.nine] = States.BC;
+            transitionTable[States.O, Inputs.nine] = States.BC;
+            transitionTable[States.P, Inputs.nine] = States.BC;
+            transitionTable[States.Q, Inputs.nine] = States.BC;
 
-            transitionTable[States.R, Inputs.o] = States.BB;
+            transitionTable[States.R, Inputs.eq] = States.BD;
+            transitionTable[States.R, Inputs.mul] = States.BE;
 
-            transitionTable[States.S, Inputs.r] = States.BC;
+            transitionTable[States.S, Inputs.eq] = States.BF;
 
-            transitionTable[States.T, Inputs.e] = States.BD;
-            transitionTable[States.T, Inputs.o] = States.BE;
+            transitionTable[States.T, Inputs.eq] = States.BG;
 
-            transitionTable[States.U, Inputs.e] = States.BF;
-            transitionTable[States.U, Inputs.i] = States.BG;
+            transitionTable[States.U, Inputs.greater] = States.BH;
 
-            transitionTable[States.V, Inputs.s] = States.BH;
+            transitionTable[States.V, Inputs.a] = States.BI;
+            transitionTable[States.V, Inputs.h] = States.BJ;
+            transitionTable[States.V, Inputs.l] = States.BK;
+            transitionTable[States.V, Inputs.o] = States.BL;
 
-            transitionTable[States.Z, Inputs.i] = States.BI;
+            transitionTable[States.W, Inputs.e] = States.BM;
 
-            transitionTable[States.AA, Inputs.e] = States.BJ;
+            transitionTable[States.X, Inputs.l] = States.BN;
+            transitionTable[States.X, Inputs.n] = States.BO;
+
+            transitionTable[States.Y, Inputs.f] = States.BP;
+            transitionTable[States.Y, Inputs.l] = States.BQ;
+
+            transitionTable[States.Z, Inputs.o] = States.BR;
+
+            transitionTable[States.AA, Inputs.o] = States.BS;
+
+            transitionTable[States.AB, Inputs.r] = States.BT;
+
+            transitionTable[States.AC, Inputs.e] = States.BU;
+            transitionTable[States.AC, Inputs.o] = States.BV;
+
+            transitionTable[States.AD, Inputs.e] = States.BW;
+            transitionTable[States.AD, Inputs.i] = States.BX;
+
+            transitionTable[States.AE, Inputs.s] = States.BY;
+
+            transitionTable[States.AI, Inputs.i] = States.BZ;
+
+            transitionTable[States.AJ, Inputs.e] = States.CA;
 
 
-            transitionTable[States.AR, Inputs.t] = States.BK;
+            transitionTable[States.AT, Inputs.zero] = States.AT;
+            transitionTable[States.AU, Inputs.zero] = States.AT;
+            transitionTable[States.AV, Inputs.zero] = States.AT;
+            transitionTable[States.AW, Inputs.zero] = States.AT;
+            transitionTable[States.AX, Inputs.zero] = States.AT;
+            transitionTable[States.AY, Inputs.zero] = States.AT;
+            transitionTable[States.AZ, Inputs.zero] = States.AT;
+            transitionTable[States.BA, Inputs.zero] = States.AT;
+            transitionTable[States.BB, Inputs.zero] = States.AT;
+            transitionTable[States.BC, Inputs.zero] = States.AT;
 
-            transitionTable[States.AS, Inputs.e] = States.BL;
+            transitionTable[States.AT, Inputs.one] = States.AU;
+            transitionTable[States.AU, Inputs.one] = States.AU;
+            transitionTable[States.AV, Inputs.one] = States.AU;
+            transitionTable[States.AW, Inputs.one] = States.AU;
+            transitionTable[States.AX, Inputs.one] = States.AU;
+            transitionTable[States.AY, Inputs.one] = States.AU;
+            transitionTable[States.AZ, Inputs.one] = States.AU;
+            transitionTable[States.BA, Inputs.one] = States.AU;
+            transitionTable[States.BB, Inputs.one] = States.AU;
+            transitionTable[States.BC, Inputs.one] = States.AU;
 
-            transitionTable[States.AT, Inputs.o] = States.BM;
+            transitionTable[States.AT, Inputs.two] = States.AV;
+            transitionTable[States.AU, Inputs.two] = States.AV;
+            transitionTable[States.AV, Inputs.two] = States.AV;
+            transitionTable[States.AW, Inputs.two] = States.AV;
+            transitionTable[States.AX, Inputs.two] = States.AV;
+            transitionTable[States.AY, Inputs.two] = States.AV;
+            transitionTable[States.AZ, Inputs.two] = States.AV;
+            transitionTable[States.BA, Inputs.two] = States.AV;
+            transitionTable[States.BB, Inputs.two] = States.AV;
+            transitionTable[States.BC, Inputs.two] = States.AV;
 
-            transitionTable[States.AU, Inputs.n] = States.BN;
+            transitionTable[States.AT, Inputs.three] = States.AW;
+            transitionTable[States.AU, Inputs.three] = States.AW;
+            transitionTable[States.AV, Inputs.three] = States.AW;
+            transitionTable[States.AW, Inputs.three] = States.AW;
+            transitionTable[States.AX, Inputs.three] = States.AW;
+            transitionTable[States.AY, Inputs.three] = States.AW;
+            transitionTable[States.AZ, Inputs.three] = States.AW;
+            transitionTable[States.BA, Inputs.three] = States.AW;
+            transitionTable[States.BB, Inputs.three] = States.AW;
+            transitionTable[States.BC, Inputs.three] = States.AW;
 
-            transitionTable[States.AV, Inputs.r] = States.BO;
+            transitionTable[States.AT, Inputs.four] = States.AX;
+            transitionTable[States.AU, Inputs.four] = States.AX;
+            transitionTable[States.AV, Inputs.four] = States.AX;
+            transitionTable[States.AW, Inputs.four] = States.AX;
+            transitionTable[States.AX, Inputs.four] = States.AX;
+            transitionTable[States.AY, Inputs.four] = States.AX;
+            transitionTable[States.AZ, Inputs.four] = States.AX;
+            transitionTable[States.BA, Inputs.four] = States.AX;
+            transitionTable[States.BB, Inputs.four] = States.AX;
+            transitionTable[States.BC, Inputs.four] = States.AX;
 
-            transitionTable[States.AW, Inputs.s] = States.BP;
+            transitionTable[States.AT, Inputs.five] = States.AY;
+            transitionTable[States.AU, Inputs.five] = States.AY;
+            transitionTable[States.AV, Inputs.five] = States.AY;
+            transitionTable[States.AW, Inputs.five] = States.AY;
+            transitionTable[States.AX, Inputs.five] = States.AY;
+            transitionTable[States.AY, Inputs.five] = States.AY;
+            transitionTable[States.AZ, Inputs.five] = States.AY;
+            transitionTable[States.BA, Inputs.five] = States.AY;
+            transitionTable[States.BB, Inputs.five] = States.AY;
+            transitionTable[States.BC, Inputs.five] = States.AY;
 
-            transitionTable[States.AX, Inputs.d] = States.BQ;
+            transitionTable[States.AT, Inputs.six] = States.AZ;
+            transitionTable[States.AU, Inputs.six] = States.AZ;
+            transitionTable[States.AV, Inputs.six] = States.AZ;
+            transitionTable[States.AW, Inputs.six] = States.AZ;
+            transitionTable[States.AX, Inputs.six] = States.AZ;
+            transitionTable[States.AY, Inputs.six] = States.AZ;
+            transitionTable[States.AZ, Inputs.six] = States.AZ;
+            transitionTable[States.BA, Inputs.six] = States.AZ;
+            transitionTable[States.BB, Inputs.six] = States.AZ;
+            transitionTable[States.BC, Inputs.six] = States.AZ;
 
-            transitionTable[States.AZ, Inputs.a] = States.BR;
+            transitionTable[States.AT, Inputs.seven] = States.BA;
+            transitionTable[States.AU, Inputs.seven] = States.BA;
+            transitionTable[States.AV, Inputs.seven] = States.BA;
+            transitionTable[States.AW, Inputs.seven] = States.BA;
+            transitionTable[States.AX, Inputs.seven] = States.BA;
+            transitionTable[States.AY, Inputs.seven] = States.BA;
+            transitionTable[States.AZ, Inputs.seven] = States.BA;
+            transitionTable[States.BA, Inputs.seven] = States.BA;
+            transitionTable[States.BB, Inputs.seven] = States.BA;
+            transitionTable[States.BC, Inputs.seven] = States.BA;
 
-            transitionTable[States.BA, Inputs.g] = States.BS;
+            transitionTable[States.AT, Inputs.eight] = States.BB;
+            transitionTable[States.AU, Inputs.eight] = States.BB;
+            transitionTable[States.AV, Inputs.eight] = States.BB;
+            transitionTable[States.AW, Inputs.eight] = States.BB;
+            transitionTable[States.AX, Inputs.eight] = States.BB;
+            transitionTable[States.AY, Inputs.eight] = States.BB;
+            transitionTable[States.AZ, Inputs.eight] = States.BB;
+            transitionTable[States.BA, Inputs.eight] = States.BB;
+            transitionTable[States.BB, Inputs.eight] = States.BB;
+            transitionTable[States.BC, Inputs.eight] = States.BB;
 
-            transitionTable[States.BB, Inputs.n] = States.BT;
-
-            transitionTable[States.BC, Inputs.o] = States.BU;
-
-            transitionTable[States.BD, Inputs.p] = States.BV;
-
-            transitionTable[States.BE, Inputs.t] = States.BW;
-
-            transitionTable[States.BF, Inputs.o] = States.BX;
-            transitionTable[States.BF, Inputs.r] = States.BY;
-
-            transitionTable[States.BG, Inputs.l] = States.BZ;
-
-            transitionTable[States.BH, Inputs.i] = States.CA;
+            transitionTable[States.AT, Inputs.nine] = States.BC;
+            transitionTable[States.AU, Inputs.nine] = States.BC;
+            transitionTable[States.AV, Inputs.nine] = States.BC;
+            transitionTable[States.AW, Inputs.nine] = States.BC;
+            transitionTable[States.AX, Inputs.nine] = States.BC;
+            transitionTable[States.AY, Inputs.nine] = States.BC;
+            transitionTable[States.AZ, Inputs.nine] = States.BC;
+            transitionTable[States.BA, Inputs.nine] = States.BC;
+            transitionTable[States.BB, Inputs.nine] = States.BC;
+            transitionTable[States.BC, Inputs.nine] = States.BC;
 
             transitionTable[States.BI, Inputs.t] = States.CB;
 
-            transitionTable[States.BJ, Inputs.r] = States.CC;
+            transitionTable[States.BJ, Inputs.e] = States.CC;
 
-            transitionTable[States.BK, Inputs.e] = States.CD;
+            transitionTable[States.BK, Inputs.o] = States.CD;
 
-            transitionTable[States.BL, Inputs.c] = States.CE;
+            transitionTable[States.BL, Inputs.n] = States.CE;
 
-            transitionTable[States.BM, Inputs.p] = States.CF;
+            transitionTable[States.BM, Inputs.r] = States.CF;
 
-            transitionTable[States.BN, Inputs.t] = States.CG;
+            transitionTable[States.BN, Inputs.s] = States.CG;
 
-            transitionTable[States.BO, Inputs.i] = States.CH;
+            transitionTable[States.BO, Inputs.d] = States.CH;
 
-            transitionTable[States.BP, Inputs.e] = States.CI;
+            transitionTable[States.BQ, Inputs.a] = States.CI;
+
+            transitionTable[States.BR, Inputs.g] = States.CJ;
+
+            transitionTable[States.BS, Inputs.n] = States.CK;
+
+            transitionTable[States.BT, Inputs.o] = States.CL;
+
+            transitionTable[States.BU, Inputs.p] = States.CM;
+
+            transitionTable[States.BV, Inputs.t] = States.CN;
+
+            transitionTable[States.BW, Inputs.o] = States.CO;
+            transitionTable[States.BW, Inputs.r] = States.CP;
+
+            transitionTable[States.BX, Inputs.l] = States.CQ;
+
+            transitionTable[States.BY, Inputs.i] = States.CR;
+
+            transitionTable[States.BZ, Inputs.t] = States.CS;
+
+            transitionTable[States.CA, Inputs.r] = States.CT;
+
+            transitionTable[States.CB, Inputs.e] = States.CU;
+
+            transitionTable[States.CC, Inputs.c] = States.CV;
+
+            transitionTable[States.CD, Inputs.p] = States.CW;
+
+            transitionTable[States.CE, Inputs.t] = States.CX;
+
+            transitionTable[States.CF, Inputs.i] = States.CY;
+
+            transitionTable[States.CG, Inputs.e] = States.CZ;
 
 
             ////////////////////////////////////////////////////
-            transitionTable[States.BR, Inputs.p] = States.CJ;
-            transitionTable[States.BS, Inputs.i] = States.CK;
-            transitionTable[States.BT, Inputs.e] = States.CL;
-            transitionTable[States.BU, Inputs.g] = States.CM;
-            transitionTable[States.BV, Inputs.l] = States.CN;
-            transitionTable[States.BW, Inputs.a] = States.CO;
-            transitionTable[States.BX, Inputs.p] = States.CP;
-            transitionTable[States.BY, Inputs.i] = States.CQ;
-            transitionTable[States.BZ, Inputs.a] = States.CR;
-            transitionTable[States.CA, Inputs.n] = States.CS;
-            transitionTable[States.CB, Inputs.u] = States.CT;
-            transitionTable[States.CC, Inputs.m] = States.CU;
-            transitionTable[States.CD, Inputs.g] = States.CV;
-            transitionTable[States.CE, Inputs.k] = States.CW;
-            transitionTable[States.CG, Inputs.i] = States.CX;
-            transitionTable[States.CH, Inputs.v] = States.CY;
-            transitionTable[States.CJ, Inputs.f] = States.CZ;
-            transitionTable[States.CK, Inputs.c] = States.DA;
-            transitionTable[States.CM, Inputs.r] = States.DB;
-            transitionTable[States.CN, Inputs.y] = States.DC;
-            transitionTable[States.CO, Inputs.t] = States.DD;
-            transitionTable[States.CQ, Inputs.e] = States.DE;
-            transitionTable[States.CR, Inputs.p] = States.DF;
-            transitionTable[States.CS, Inputs.g] = States.DG;
-            transitionTable[States.CT, Inputs.a] = States.DH;
-            transitionTable[States.CU, Inputs.i] = States.DI;
-            transitionTable[States.CV, Inputs.o] = States.DJ;
-            transitionTable[States.CX, Inputs.n] = States.DK;
-            transitionTable[States.CY, Inputs.e] = States.DL;
-            transitionTable[States.DA, Inputs.a] = States.DM;
-            transitionTable[States.DB, Inputs.a] = States.DN;
-            transitionTable[States.DC, Inputs.w] = States.DO;
-            transitionTable[States.DD, Inputs.e] = States.DP;
-            transitionTable[States.DE, Inputs.s] = States.DQ;
-            transitionTable[States.DF, Inputs.f] = States.DR;
-            transitionTable[States.DH, Inputs.t] = States.DS;
-            transitionTable[States.DI, Inputs.n] = States.DT;
-            transitionTable[States.DJ, Inputs.r] = States.DU;
-            transitionTable[States.DK, Inputs.u] = States.DV;
-            transitionTable[States.DM, Inputs.l] = States.DW;
-            transitionTable[States.DN, Inputs.m] = States.DX;
-            transitionTable[States.DO, Inputs.i] = States.DY;
-            transitionTable[States.DP, Inputs.w] = States.DZ;
-            transitionTable[States.DS, Inputs.i] = States.EA;
-            transitionTable[States.DT, Inputs.a] = States.EB;
-            transitionTable[States.DU, Inputs.y] = States.EC;
-            transitionTable[States.DV, Inputs.e] = States.ED;
-            transitionTable[States.DY, Inputs.t] = States.EE;
-            transitionTable[States.DZ, Inputs.h] = States.EF;
-            transitionTable[States.EA, Inputs.o] = States.EG;
-            transitionTable[States.EB, Inputs.t] = States.EH;
-            transitionTable[States.ED, Inputs.w] = States.EI;
-            transitionTable[States.EE, Inputs.h] = States.EJ;
-            transitionTable[States.EF, Inputs.e] = States.EK;
-            transitionTable[States.EG, Inputs.n] = States.EL;
-            transitionTable[States.EH, Inputs.e] = States.EM;
-            transitionTable[States.EI, Inputs.h] = States.EN;
-            transitionTable[States.EK, Inputs.n] = States.EO;
-            transitionTable[States.EL, Inputs.o] = States.EP;
-            transitionTable[States.EM, Inputs.t] = States.EQ;
-            transitionTable[States.EN, Inputs.e] = States.ER;
-            transitionTable[States.EP, Inputs.f] = States.ES;
-            transitionTable[States.EQ, Inputs.h] = States.ET;
-            transitionTable[States.ER, Inputs.n] = States.EU;
-            transitionTable[States.ET, Inputs.i] = States.EV;
-            transitionTable[States.EV, Inputs.s] = States.EW;
+            transitionTable[States.CI, Inputs.p] = States.DA;
+            transitionTable[States.CJ, Inputs.i] = States.DB;
+            transitionTable[States.CK, Inputs.e] = States.DC;
+            transitionTable[States.CL, Inputs.g] = States.DD;
+            transitionTable[States.CM, Inputs.l] = States.DE;
+            transitionTable[States.CN, Inputs.a] = States.DF;
+            transitionTable[States.CO, Inputs.p] = States.DG;
+            transitionTable[States.CP, Inputs.i] = States.DH;
+            transitionTable[States.CQ, Inputs.a] = States.DI;
+            transitionTable[States.CR, Inputs.n] = States.DJ;
+            transitionTable[States.CS, Inputs.u] = States.DK;
+            transitionTable[States.CT, Inputs.m] = States.DL;
+            transitionTable[States.CU, Inputs.g] = States.DM;
+            transitionTable[States.CV, Inputs.k] = States.DN;
+            transitionTable[States.CX, Inputs.i] = States.DO;
+            transitionTable[States.CY, Inputs.v] = States.DP;
+            transitionTable[States.DA, Inputs.f] = States.DQ;
+            transitionTable[States.DB, Inputs.c] = States.DR;
+            transitionTable[States.DD, Inputs.r] = States.DS;
+            transitionTable[States.DE, Inputs.y] = States.DT;
+            transitionTable[States.DF, Inputs.t] = States.DU;
+            transitionTable[States.DH, Inputs.e] = States.DV;
+            transitionTable[States.DI, Inputs.p] = States.DW;
+            transitionTable[States.DJ, Inputs.g] = States.DX;
+            transitionTable[States.DK, Inputs.a] = States.DY;
+            transitionTable[States.DL, Inputs.i] = States.DZ;
+            transitionTable[States.DM, Inputs.o] = States.EA;
+            transitionTable[States.DO, Inputs.n] = States.EB;
+            transitionTable[States.DP, Inputs.e] = States.EC;
+            transitionTable[States.DR, Inputs.a] = States.ED;
+            transitionTable[States.DS, Inputs.a] = States.EE;
+            transitionTable[States.DT, Inputs.w] = States.EF;
+            transitionTable[States.DU, Inputs.e] = States.EG;
+            transitionTable[States.DV, Inputs.s] = States.EH;
+            transitionTable[States.DW, Inputs.f] = States.EI;
+            transitionTable[States.DY, Inputs.t] = States.EJ;
+            transitionTable[States.DZ, Inputs.n] = States.EK;
+            transitionTable[States.EA, Inputs.r] = States.EL;
+            transitionTable[States.EB, Inputs.u] = States.EM;
+            transitionTable[States.ED, Inputs.l] = States.EN;
+            transitionTable[States.EE, Inputs.m] = States.EO;
+            transitionTable[States.EF, Inputs.i] = States.EP;
+            transitionTable[States.EG, Inputs.w] = States.EQ;
+            transitionTable[States.EJ, Inputs.i] = States.ER;
+            transitionTable[States.EK, Inputs.a] = States.ES;
+            transitionTable[States.EL, Inputs.y] = States.ET;
+            transitionTable[States.EM, Inputs.e] = States.EU;
+            transitionTable[States.EP, Inputs.t] = States.EV;
+            transitionTable[States.EQ, Inputs.h] = States.EW;
+            transitionTable[States.ER, Inputs.o] = States.EX;
+            transitionTable[States.ES, Inputs.t] = States.EY;
+            transitionTable[States.EU, Inputs.w] = States.EZ;
+            transitionTable[States.EV, Inputs.h] = States.FA;
+            transitionTable[States.EW, Inputs.e] = States.FB;
+            transitionTable[States.EX, Inputs.n] = States.FC;
+            transitionTable[States.EY, Inputs.e] = States.FD;
+            transitionTable[States.EZ, Inputs.h] = States.FE;
+            transitionTable[States.FB, Inputs.n] = States.FF;
+            transitionTable[States.FC, Inputs.o] = States.FG;
+            transitionTable[States.FD, Inputs.t] = States.FH;
+            transitionTable[States.FE, Inputs.e] = States.FI;
+            transitionTable[States.FG, Inputs.f] = States.FJ;
+            transitionTable[States.FH, Inputs.h] = States.FK;
+            transitionTable[States.FI, Inputs.n] = States.FL;
+            transitionTable[States.FK, Inputs.i] = States.FM;
+            transitionTable[States.FM, Inputs.s] = States.FN;
             return transitionTable;
         }
 
