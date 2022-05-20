@@ -381,7 +381,7 @@ namespace Compiler_project.Models
                         tokenWithLineNumber.token.tokenName = lexeim;
                         tokenWithLineNumber.token.tokenValue = tokenValue;
 
-                        next_state = States.A;
+                        next_state = States.EX;
 
                         if (input[postion_of_current_char] == ';' || input[postion_of_current_char] == '\n')
                         {
