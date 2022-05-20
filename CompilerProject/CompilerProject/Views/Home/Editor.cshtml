@@ -30,7 +30,7 @@
                 <input type="submit" class="btn" value="scan" name="btn">
                 <input type="submit" class="btn" value="parse" name="btn">
                 <label class="btn" for="upload">Browse</label>
-                <input id="upload" type="file" value="@ViewBag.fileContent">
+                <input id="upload" type="file" accept=".txt" value="@ViewBag.fileContent">
                 <textarea id="filename" name="filename" style="width: 233px; height: 56px; text-decoration: underline; overflow: hidden; position: unset; font-size: 24px; resize: none; border: 0px; color: rgb(70, 113, 234); float: right; margin-top: 4px; ">@ViewBag.filename</textarea>
                 <input type="submit" id="removefile" class="btn" value="Remove File" name="removeFile" style=" position: absolute; width: 139px; margin-left: 117px; height: 33px; padding: 0px; background: brown; visibility: hidden">
                 @if (Session["fileContent"] != null)
