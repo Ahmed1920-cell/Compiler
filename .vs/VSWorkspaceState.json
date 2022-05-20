@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Compiler_Project",
-    "\\Compiler_Project\\Compiler_project",
-    "\\Compiler_Project\\Compiler_project\\Views",
-    "\\Compiler_Project\\Compiler_project\\Views\\Home"
+    "\\Compiler_Project"
   ],
-  "SelectedNode": "\\Compiler_Project\\Compiler_project\\Views\\Home\\Editor.cshtml",
+  "SelectedNode": "\\Compiler_Project\\Compiler_Project.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -299,7 +299,7 @@ namespace Compiler_project.Models
                     {
                         while (Single_comment)
                         {
-                            if (input[postion_of_current_char] != '\n')
+                            if (input[postion_of_current_char] != '\r')
                                 postion_of_current_char++;
                             else
                             {
@@ -309,6 +309,8 @@ namespace Compiler_project.Models
                             }
                             if (postion_of_current_char == input.Length)
                             {
+                                lexeim = "";
+                                next_state = States.A;
                                 break;
                             }
                         }
@@ -337,6 +339,8 @@ namespace Compiler_project.Models
                             }
                             if (postion_of_current_char == input.Length)
                             {
+                                next_state = States.A;
+                                lexeim = "";
                                 break;
                             }
                         }
@@ -354,10 +358,11 @@ namespace Compiler_project.Models
                     {
                         Number_of_current_line++;
                     }
-
                     if (lexeim.Length != 0 && (next_state == States.NO_STATE || input[postion_of_current_char] == ' ' || input[postion_of_current_char] == ('\n') || input[postion_of_current_char] == (';') || input[postion_of_current_char] == ('\r')/*||postion_of_current_char == input.Length - 1*/))
                     {
-                        if (is_identifier(lexeim))
+                        next_state = States.EX;
+                        current_state= States.EX;
+                        if (is_identifier(lexeim, transitionTable,input,postion_of_current_char))
                         {
                             tokenValue = "ID";
                             Error = false;
@@ -368,7 +373,7 @@ namespace Compiler_project.Models
                         {
                             tokenValue = "Error";
                             Error = true;
-                            // total_number_of_errors++;
+                            total_number_of_errors++;
                         }
 
 
@@ -390,8 +395,10 @@ namespace Compiler_project.Models
                         postion_of_current_char++;
                         break;
                     }
-                    if (lexeim == "--" || lexeim == "-- ")
+                    if (lexeim == "--" || lexeim == "--")
+                    {
                         Single_comment = true;
+                    }
                     if (input[postion_of_current_char] == '<' && input[postion_of_current_char + 1] == '*')
                         Multi_comment = true;
                     postion_of_current_char++;
@@ -434,21 +441,28 @@ namespace Compiler_project.Models
             return tokensWithLineNumber;
         }
 
-        private static bool is_identifier(string lexeim)
+        private static bool is_identifier(string lexeim , int[,] transitionTable , string input ,int postion_of_current_char)
         {
+            int next_state = States.EX;
             char firstChar = lexeim[0];
             for (int i = 0; i < lexeim.Length; i++)
             {
-                if (i == 0)
+                next_state = transitionTable[next_state, lexeim[i]];
+                if (next_state == States.NO_STATE)
                 {
-                    if (firstChar < 'A' || firstChar < 'a' && firstChar > 'Z' && firstChar != '_' || firstChar > 'z')
-                        return false;
+                    return false;
                 }
-                else
-                {
-                    if (lexeim[i] < 'A' && lexeim[i] > '9' || lexeim[i] < 'a' && lexeim[i] > 'Z' && lexeim[i] != '_' || lexeim[i] < '0' || lexeim[i] > 'z')
-                        return false;
-                }
+
+                //if (i == 0)
+                //{
+                //    if (firstChar < 'A' || firstChar < 'a' && firstChar > 'Z' && firstChar != '_' || firstChar > 'z')
+                //        return false;
+                //}
+                //else
+                //{
+                //    if (lexeim[i] < 'A' && lexeim[i] > '9' || lexeim[i] < 'a' && lexeim[i] > 'Z' && lexeim[i] != '_' || lexeim[i] < '0' || lexeim[i] > 'z')
+                //        return false;
+                //}
             }
 
             return true;
@@ -508,6 +522,8 @@ namespace Compiler_project.Models
             accept_states[States.ES] = "Switch";
             accept_states[States.EU] = "Loop";
             accept_states[States.EW] = "Break";
+            accept_states[States.EY] = "ID";
+            accept_states[States.EZ] = "ID";
             accept_states[States.AG] = "Braces";
             accept_states[States.AH] = "Braces";
             return accept_states;
@@ -732,6 +748,27 @@ namespace Compiler_project.Models
             transitionTable[States.ER, Inputs.n] = States.EU;
             transitionTable[States.ET, Inputs.i] = States.EV;
             transitionTable[States.EV, Inputs.s] = States.EW;
+            for(char i='a';i<='z';i++)
+            transitionTable[States.EX,i] = States.EY;
+            for (char i = 'A'; i <= 'Z'; i++)
+                transitionTable[States.EX, i] = States.EY;
+            transitionTable[States.EX, '_'] = States.EY;
+            for (char i = 'a'; i <= 'z'; i++)
+                transitionTable[States.EY, i] = States.EZ;
+            for (char i = 'A'; i <= 'Z'; i++)
+                transitionTable[States.EY, i] = States.EZ;
+            transitionTable[States.EY, '_'] = States.EZ;
+            for (char i = '0'; i <= '9'; i++)
+                transitionTable[States.EY, i] = States.EZ;
+
+            for (char i = 'a'; i <= 'z'; i++)
+                transitionTable[States.EZ, i] = States.EZ;
+            for (char i = 'A'; i <= 'Z'; i++)
+                transitionTable[States.EZ, i] = States.EZ;
+            transitionTable[States.EZ, '_'] = States.EZ;
+            for (char i = '0'; i <= '9'; i++)
+                transitionTable[States.EZ, i] = States.EZ;
+
             return transitionTable;
         }
 
