@@ -32,7 +32,6 @@
                 <label class="btn" for="upload">Browse</label>
                 <input id="upload" type="file" name="filename">
                 <span> filename </span>
-                <p id="outputBX"></p>
 
             </div>
         </div>
@@ -133,9 +132,10 @@
 </script>
 <!-- comment script-->
 <script>
-    function commentText() {
+    function commentText() {;
         if (document.getSelection) {
             let code = document.getElementById('line_numbers').value;
+            document.getElementById('line_numbers').style.color = 'green'
             let comment = "<*" + document.getSelection().toString() + "*>";
             code = code.replace(document.getSelection().toString(), comment);
             document.getElementById('line_numbers').value = code;

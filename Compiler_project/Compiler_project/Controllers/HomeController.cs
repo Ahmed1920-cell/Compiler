@@ -41,7 +41,7 @@ namespace Compiler_project.Controllers
                             int lineNumber = tokenWithLineNumber.lineNumber;
                             string tokenName = tokenWithLineNumber.token.tokenName;
                             string tokenValue = tokenWithLineNumber.token.tokenValue;
-                            tokensWithLineNumberToView.Add("Line : " + lineNumber + "\tToken Text: " + tokenName + "\tToken Type: " + tokenValue);
+                            tokensWithLineNumberToView.Add("Line : " + lineNumber + "\t\tToken Text: " + tokenName + "\t\tToken Type: " + tokenValue);
                         }
                         tokensWithLineNumberToView.Add("Total NO of errors: " + scanner.total_number_of_errors);
 
