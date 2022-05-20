@@ -20,8 +20,9 @@ namespace Compiler_project.Controllers
         [ActionName("Editor")]
         public ActionResult EditorPost(string input_code, string btn, string fileContent, string filename,string removeFile)
         {
-            if (removeFile == "RemoveFile") {
+            if (removeFile == "Remove File") {
                 fileContent = null;
+                Session["fileContent"] = null;
                 filename = null;
             }
             string input = "";
@@ -61,7 +62,7 @@ namespace Compiler_project.Controllers
                             int lineNumber = tokenWithLineNumber.lineNumber;
                             string tokenName = tokenWithLineNumber.token.tokenName;
                             string tokenValue = tokenWithLineNumber.token.tokenValue;
-                            tokensWithLineNumberToView.Add("Line : " + lineNumber + "\t\tToken Text: " + tokenName + "\t\tToken Type: " + tokenValue);
+                            tokensWithLineNumberToView.Add("Line : " + lineNumber + "\t\tToken Text: " + tokenName + "\t\t\t\tToken Type: " + tokenValue);
                         }
                         tokensWithLineNumberToView.Add("Total NO of errors: " + scanner.total_number_of_errors);
 
