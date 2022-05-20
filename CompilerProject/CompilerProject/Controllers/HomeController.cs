@@ -18,8 +18,12 @@ namespace Compiler_project.Controllers
 
         [HttpPost]
         [ActionName("Editor")]
-        public ActionResult EditorPost(string input_code, string btn, string fileContent, string filename)
+        public ActionResult EditorPost(string input_code, string btn, string fileContent, string filename,string removeFile)
         {
+            if (removeFile == "RemoveFile") {
+                fileContent = null;
+                filename = null;
+            }
             string input = "";
 
             if (input_code != "")
@@ -27,7 +31,7 @@ namespace Compiler_project.Controllers
                 input = input_code;
             }
 
-            else if (fileContent != null && fileContent != "")
+            if (fileContent != null && fileContent != "")
             {
                 Session["fileContent"] = fileContent;
                 input = (string)Session["fileContent"];
