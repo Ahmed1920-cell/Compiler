@@ -19,9 +19,13 @@ namespace Compiler_project.Controllers
 
         [HttpPost]
         [ActionName("Editor")]
-        public ActionResult EditorPost(string input_code, string btn)
+        public ActionResult EditorPost(string input_code, string btn, string filename)
         {
             ViewBag.code = input_code;
+            if (filename != null && filename!="")
+            {
+                input_code = filename;
+            }
             Session["CurrentCode"] = input_code;
             string currentCode = (string)(Session["CurrentCode"]);
             string pastCode = (string)(Session["PastCode"]);

@@ -25,14 +25,15 @@
                 <button class="comment" onclick="commentText()" name="btn" value="comment">comment</button>
                 <button class="comment" onclick="uncommentText()" name="btn" value="uncomment">uncomment</button>
             </div>
-            <textarea id="line_numbers" rows="4" cols="50" name="input_code" placeholder="Type your Code here ..." required>@ViewBag.code</textarea>
+            <textarea id="line_numbers" rows="4" cols="50" name="input_code" placeholder="Type your Code here ..." >@ViewBag.code</textarea>
             <div class="botton">
                 <input type="submit" class="btn" value="scan" name="btn">
                 <input type="submit" class="btn" value="parse" name="btn">
                 <label class="btn" for="upload">Browse</label>
-                <input id="upload" type="file" name="filename">
+                <input id="upload" type="file">
                 <span> filename </span>
-
+                <textarea id="outputBX" style=" position: absolute; visibility: hidden;" name="filename"></textarea>
+                <p id="outputBX"></p>
             </div>
         </div>
     </form>
@@ -57,7 +58,7 @@
         $.fn.linenumbers = function (in_opts) {
             // Settings and Defaults
             var opt = $.extend({
-                col_width: '65px',
+                col_width: '0px',
                 start: 1,
                 digits: 3.
             }, in_opts);
@@ -135,7 +136,6 @@
     function commentText() {;
         if (document.getSelection) {
             let code = document.getElementById('line_numbers').value;
-            document.getElementById('line_numbers').style.color = 'green'
             let comment = "<*" + document.getSelection().toString() + "*>";
             code = code.replace(document.getSelection().toString(), comment);
             document.getElementById('line_numbers').value = code;
@@ -148,8 +148,6 @@
         if (document.getSelection) {
             let code = document.getElementById('line_numbers').value;
             let comment = document.getSelection().toString();
-            //let re1 =/<*/
-            //let uncomment = comment.replace(/('<*') ([^'<*']) ([^'*>']+) ('*>')/g, $2$3);
             let uncomment = comment.split("<*").join('');
             uncomment = uncomment.split("*>").join('');
             code = code.replace(comment, uncomment);

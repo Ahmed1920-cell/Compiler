@@ -501,7 +501,7 @@ namespace Compiler_project.Models
             accept_states[States.DQ] = "String";
             accept_states[States.DR] = "SFloat";
             accept_states[States.DW] = "Boolean";
-            accept_states[States.DX] = "Stat Statement";
+            accept_states[States.DX] = "Start Statement";
             accept_states[States.EC] = "Class";
             accept_states[States.EJ] = "Return";
             accept_states[States.EO] = "Loop";
