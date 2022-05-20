@@ -324,7 +324,7 @@ namespace Compiler_project.Models
                             {
                                 Number_of_current_line++;
                             }
-                            if (lexeim == "*>")
+                            if (input[postion_of_current_char-1] == '*' && input[postion_of_current_char]=='>')
                             {
                                 Multi_comment = false;
                                 next_state = States.A;
@@ -392,7 +392,7 @@ namespace Compiler_project.Models
                     }
                     if (lexeim == "--" || lexeim == "-- ")
                         Single_comment = true;
-                    if (lexeim == "<*" || lexeim == "<* ")
+                    if (input[postion_of_current_char] == '<' && input[postion_of_current_char+1] == '*' )
                         Multi_comment = true;
                     postion_of_current_char++;
 
