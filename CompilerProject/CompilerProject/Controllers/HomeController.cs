@@ -47,7 +47,7 @@ namespace Compiler_project.Controllers
             switch (btn)
             {
                 case "scan":
-                    if (input != null)
+                    if (input != "")
                     {
                         LanguageScanner scanner = new LanguageScanner(input);
                         ArrayList tokensWithLineNumberToView = new ArrayList();
