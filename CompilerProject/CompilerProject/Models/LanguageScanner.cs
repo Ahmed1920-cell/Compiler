@@ -373,7 +373,7 @@ namespace Compiler_project.Models
                         {
                             tokenValue = "Error";
                             Error = true;
-                            total_number_of_errors++;
+                            //total_number_of_errors++;
                         }
 
 
