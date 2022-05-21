@@ -162,7 +162,13 @@
     function commentText() {
         if (document.getSelection) {
             let code = document.getElementById('line_numbers').value;
-            let comment = "<*" + document.getSelection().toString() + "*>";
+            let selectedCode = document.getSelection().toString()
+            let comment;
+            if (!selectedCode.includes("\n")) {
+                comment = "--" + selectedCode;
+            } else {
+                comment = "<*" + selectedCode + "*>";
+            }
             code = code.replace(document.getSelection().toString(), comment);
             document.getElementById('line_numbers').value = code;
         }
@@ -176,6 +182,7 @@
             let comment = document.getSelection().toString();
             let uncomment = comment.split("<*").join('');
             uncomment = uncomment.split("*>").join('');
+            uncomment = uncomment.split("--").join('');
             code = code.replace(comment, uncomment);
             document.getElementById('line_numbers').value = code;
         }
