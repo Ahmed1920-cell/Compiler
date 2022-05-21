@@ -108,7 +108,7 @@ namespace Compiler_project.Controllers
                 int lineNumber = tokenWithLineNumber.lineNumber;
                 string tokenName = tokenWithLineNumber.token.tokenName;
                 string tokenValue = tokenWithLineNumber.token.tokenValue;
-                tokensWithLineNumberToView.Add("Line : " + lineNumber + "\t\tToken Text: " + tokenName + "\t\t\t\tToken Type: " + tokenValue);
+                tokensWithLineNumberToView.Add("Line : " + lineNumber + "\t\tToken Text: " + tokenName + "\t\t\t\t\tToken Type: " + tokenValue);
             }
             if (tokensWithLineNumberToView.Count != 0)
             {

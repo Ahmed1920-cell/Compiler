@@ -15,7 +15,7 @@ class LanguageParser
                      ">",">=","<=","terminatethis","Replywith","return","Continuewhen",
                      "Rotatewhen","and","or","if","{","}",",","Ilap","Silap","Clop",
                      "Series","Ilapf","Silapf","None","Logical","read","write","=",
-                     "Category","Derive","$","End"
+                     "Category","Derive","$","End",".txt"
 };
     static String[] nonTerminals ={"Program","Program`","ClassDeclaration","CD’","Class_Implementation","Var_Method","Var_Method`",
                        "MethodDeclaration","Me_Declaration","FuncDecl","Type","ParameterList","Non_Empty_List",
@@ -344,7 +344,7 @@ class LanguageParser
         table[42, 2] = "< * STR * >";
         table[42, 3] = "- - STR";
         //using_command
-        table[43, 1] = "using ( F_name ) ;";
+        table[43, 1] = "using ( F_name .txt ) ;";
         //F_name
         table[44, 0] = "STR";
 

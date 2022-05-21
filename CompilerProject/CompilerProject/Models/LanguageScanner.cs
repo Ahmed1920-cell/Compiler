@@ -399,8 +399,8 @@ namespace Compiler_project.Models
                     {
                         Single_comment = true;
                     }
-                    if (input[postion_of_current_char] == '<' && input[postion_of_current_char + 1] == '*')
-                        Multi_comment = true;
+                    if (lexeim == "<*" || lexeim == "<* ")
+                            Multi_comment = true;
                     postion_of_current_char++;
 
                     if (postion_of_current_char == input.Length)
