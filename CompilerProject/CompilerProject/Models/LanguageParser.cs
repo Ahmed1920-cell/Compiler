@@ -31,7 +31,6 @@ class LanguageParser
     public LanguageParser(string input)
     {
 
-
         input_splited = input.Split(' ');
         Fill_ParseTable(ref table);
         parseStack stack = new parseStack();
@@ -469,4 +468,5 @@ class LanguageParser
         }
         return words;
     }
+
 }
