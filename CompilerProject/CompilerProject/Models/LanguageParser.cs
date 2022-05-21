@@ -15,7 +15,7 @@ class LanguageParser
                      ">",">=","<=","terminatethis","Replywith","return","Continuewhen",
                      "Rotatewhen","and","or","if","{","}",",","Ilap","Silap","Clop",
                      "Series","Ilapf","Silapf","None","Logical","read","write","=",
-                     "Category","Derive","$"
+                     "Category","Derive","$","End"
 };
     static String[] nonTerminals ={"Program","Program`","ClassDeclaration","CD’","Class_Implementation","Var_Method","Var_Method`",
                        "MethodDeclaration","Me_Declaration","FuncDecl","Type","ParameterList","Non_Empty_List",
@@ -32,7 +32,7 @@ class LanguageParser
     {
 
 
-        input_splited = splitOnSpace(input);
+        input_splited = input.Split(' ');
         Fill_ParseTable(ref table);
         parseStack stack = new parseStack();
 
@@ -55,7 +55,7 @@ class LanguageParser
             if (isNonTerminal(topOfStack))
             {
                 String rule = getRule(topOfStack, theNextWord);
-                String[] Rule = splitOnSpace(rule);
+                String[] Rule = rule.Split(' ');
                 for (int i = Rule.Length - 1; i >= 0; i--)
                 {
                     stack.Push(Rule[i]);

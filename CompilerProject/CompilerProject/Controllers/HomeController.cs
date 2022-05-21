@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Compiler_project.Models;
 using System.Collections;
+using System.Diagnostics;
 
 namespace Compiler_project.Controllers
 {
@@ -83,11 +84,10 @@ namespace Compiler_project.Controllers
             if ((Boolean)Session["isScanned"] == true)
             {
                 LanguageParser parser = new LanguageParser(input);
-                ArrayList parserOutput = new ArrayList();
                 for (int i = 0; i < parser.parserOutput.Count; i++)
                 {
                     string outputLine = (string)parser.parserOutput[i];
-                    parserOutput.Add(outputLine);
+                    parseToView.Add(outputLine);
                 }
 
             }
