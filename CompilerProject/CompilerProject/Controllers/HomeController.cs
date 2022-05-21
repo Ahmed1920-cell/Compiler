@@ -18,9 +18,10 @@ namespace Compiler_project.Controllers
 
         [HttpPost]
         [ActionName("Editor")]
-        public ActionResult EditorPost(string input_code, string btn, string fileContent, string filename,string removeFile)
+        public ActionResult EditorPost(string input_code, string btn, string fileContent, string filename, string removeFile)
         {
-            if (removeFile == "Remove File") {
+            if (removeFile == "Remove File")
+            {
                 fileContent = null;
                 Session["fileContent"] = null;
                 filename = null;
@@ -49,11 +50,12 @@ namespace Compiler_project.Controllers
             {
                 Session["isScanned"] = false;
             }
-            switch (btn)
+            if (input != "")
             {
-                case "scan":
-                    if (input != "")
-                    {
+                switch (btn)
+                {
+                    case "scan":
+
                         LanguageScanner scanner = new LanguageScanner(input);
                         ArrayList tokensWithLineNumberToView = new ArrayList();
                         for (int i = 0; i < scanner.tokensWithLineNumber.Count; i++)
@@ -64,35 +66,38 @@ namespace Compiler_project.Controllers
                             string tokenValue = tokenWithLineNumber.token.tokenValue;
                             tokensWithLineNumberToView.Add("Line : " + lineNumber + "\t\tToken Text: " + tokenName + "\t\t\t\tToken Type: " + tokenValue);
                         }
-                        tokensWithLineNumberToView.Add("Total NO of errors: " + scanner.total_number_of_errors);
-
+                        if (tokensWithLineNumberToView.Count != 0)
+                        {
+                            tokensWithLineNumberToView.Add("Total NO of errors: " + scanner.total_number_of_errors);
+                        }
                         ViewBag.vb = tokensWithLineNumberToView;
                         Session["isScanned"] = true;
                         Session["PastCode"] = input;
 
-                    }
-                    return View();
-                case "parse":
-                    ArrayList parseToView = new ArrayList();
 
-                    if ((Boolean)Session["isScanned"] == true)
-                    {
-                        parseToView.Add("Parser Working");
-                    }
-                    else
-                    {
-                        parseToView.Add("Scanner Should Working first before the Parser");
-                    }
-                    ViewBag.vb = parseToView;
+                        return View();
+                    case "parse":
+                        ArrayList parseToView = new ArrayList();
 
-                    return View();
-                case "comment":
-                    return View();
-                case "uncomment":
-                    return View();
+                        if ((Boolean)Session["isScanned"] == true)
+                        {
+                            parseToView.Add("Parser Working");
+                        }
+                        else
+                        {
+                            parseToView.Add("Scanner Should Working first before the Parser");
+                        }
+                        ViewBag.vb = parseToView;
+
+                        return View();
+                    case "comment":
+                        return View();
+                    case "uncomment":
+                        return View();
 
 
 
+                }
             }
 
             return View();
