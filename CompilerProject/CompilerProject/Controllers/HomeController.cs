@@ -56,38 +56,11 @@ namespace Compiler_project.Controllers
                 {
                     case "scan":
 
-                        LanguageScanner scanner = new LanguageScanner(input);
-                        ArrayList tokensWithLineNumberToView = new ArrayList();
-                        for (int i = 0; i < scanner.tokensWithLineNumber.Count; i++)
-                        {
-                            TokenWithLineNumber tokenWithLineNumber = (TokenWithLineNumber)scanner.tokensWithLineNumber[i];
-                            int lineNumber = tokenWithLineNumber.lineNumber;
-                            string tokenName = tokenWithLineNumber.token.tokenName;
-                            string tokenValue = tokenWithLineNumber.token.tokenValue;
-                            tokensWithLineNumberToView.Add("Line : " + lineNumber + "\t\tToken Text: " + tokenName + "\t\t\t\tToken Type: " + tokenValue);
-                        }
-                        if (tokensWithLineNumberToView.Count != 0)
-                        {
-                            tokensWithLineNumberToView.Add("Total NO of errors: " + scanner.total_number_of_errors);
-                        }
-                        ViewBag.vb = tokensWithLineNumberToView;
-                        Session["isScanned"] = true;
-                        Session["PastCode"] = input;
-
+                        Scan(input);
 
                         return View();
                     case "parse":
-                        ArrayList parseToView = new ArrayList();
-
-                        if ((Boolean)Session["isScanned"] == true)
-                        {
-                            parseToView.Add("Parser Working");
-                        }
-                        else
-                        {
-                            parseToView.Add("Scanner Should Working first before the Parser");
-                        }
-                        ViewBag.vb = parseToView;
+                        Parse(input);
 
                         return View();
                     case "comment":
@@ -103,6 +76,48 @@ namespace Compiler_project.Controllers
             return View();
         }
 
+        private void Parse(string input)
+        {
+            ArrayList parseToView = new ArrayList();
+
+            if ((Boolean)Session["isScanned"] == true)
+            {
+                LanguageParser parser = new LanguageParser(input);
+                ArrayList parserOutput = new ArrayList();
+                for (int i = 0; i < parser.parserOutput.Count; i++)
+                {
+                    string outputLine = (string)parser.parserOutput[i];
+                    parserOutput.Add(outputLine);
+                }
+
+            }
+            else
+            {
+                parseToView.Add("Scanner Should Working first before the Parser");
+            }
+            ViewBag.vb = parseToView;
+        }
+
+        private void Scan(string input)
+        {
+            LanguageScanner scanner = new LanguageScanner(input);
+            ArrayList tokensWithLineNumberToView = new ArrayList();
+            for (int i = 0; i < scanner.tokensWithLineNumber.Count; i++)
+            {
+                TokenWithLineNumber tokenWithLineNumber = (TokenWithLineNumber)scanner.tokensWithLineNumber[i];
+                int lineNumber = tokenWithLineNumber.lineNumber;
+                string tokenName = tokenWithLineNumber.token.tokenName;
+                string tokenValue = tokenWithLineNumber.token.tokenValue;
+                tokensWithLineNumberToView.Add("Line : " + lineNumber + "\t\tToken Text: " + tokenName + "\t\t\t\tToken Type: " + tokenValue);
+            }
+            if (tokensWithLineNumberToView.Count != 0)
+            {
+                tokensWithLineNumberToView.Add("Total NO of errors: " + scanner.total_number_of_errors);
+            }
+            ViewBag.vb = tokensWithLineNumberToView;
+            Session["isScanned"] = true;
+            Session["PastCode"] = input;
+        }
 
 
     }
